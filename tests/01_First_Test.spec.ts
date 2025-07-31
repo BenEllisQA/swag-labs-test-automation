@@ -12,9 +12,12 @@ test("My first Playwright TypeScript test", async ({ page }) => {
   //Verifies the page has the correct heading
   await expect(page.getByText('Swag Labs')).toBeVisible();
 
-  //CLick into the Username field and provide an incorrect username
+  //Click into the Username field and provide an incorrect username
   await page.locator('#user-name').fill('incorrect.username')
 
-  //CLick into the Username field and provide an incorrect password
+  //Click into the Username field and provide an incorrect password
   await page.locator('#password').fill('incorrectpassword')
+
+  //Click the login button
+  await page.getByRole('button', { name: 'Login' }).click();
 });
