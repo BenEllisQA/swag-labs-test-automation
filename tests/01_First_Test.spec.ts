@@ -23,4 +23,10 @@ test("Login with incorrect details", async ({ page }) => {
 
   //Verify error message is visible and text is correct
   await expect(page.getByRole('heading', { level: 3, name: 'Epic sadface: Username and password do not match any user in this service'})).toBeVisible();
+
+  //Close error message
+  await page.locator('.error-button').click()
+
+  //Verify error message is no longer visible
+  await expect(page.getByRole('heading', { level: 3, name: 'Epic sadface: Username and password do not match any user in this service'})).toBeHidden();
 });
