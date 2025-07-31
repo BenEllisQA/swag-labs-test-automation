@@ -2,7 +2,7 @@
 import { test, expect } from "@playwright/test";
 
 //Write a test
-test("My first Playwright TypeScript test", async ({ page }) => {
+test("Login with incorrect details", async ({ page }) => {
   // Go to URL
   await page.goto("https://www.saucedemo.com/");
 
@@ -20,4 +20,7 @@ test("My first Playwright TypeScript test", async ({ page }) => {
 
   //Click the login button
   await page.getByRole('button', { name: 'Login' }).click();
+
+  //Verify error message is visible and text is correct
+  await expect(page.getByRole('heading', { level: 3, name: 'Epic sadface: Username and password do not match any user in this service'})).toBeVisible();
 });
