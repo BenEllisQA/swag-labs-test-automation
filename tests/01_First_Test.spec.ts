@@ -14,4 +14,7 @@ test("My first Playwright TypeScript test", async ({ page }) => {
 
   //CLick into the Username field and provide an incorrect username
   await page.locator('#user-name').fill('incorrect.username')
+
+  //CLick into the Username field and provide an incorrect password
+  await page.locator('#password').fill('incorrectpassword')
 });
