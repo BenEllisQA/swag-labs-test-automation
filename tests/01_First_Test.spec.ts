@@ -4,38 +4,16 @@ import { test, expect } from "@playwright/test";
 //Write a test
 test("My first Playwright TypeScript test", async ({ page }) => {
   // Go to URL
-  await page.goto("https://www.google.com");
+  await page.goto("https://www.saucedemo.com/");
 
-  //Click Accept All if the Google prompt appears
-  const acceptAllButtonGoogle = page.getByRole('button', { name: 'Accept all' });
+  //Verify the Page has the correct title
+  await expect(page).toHaveTitle('Swag Labs');
 
-  try {
-    if (await acceptAllButtonGoogle.isVisible()) {
-      await acceptAllButtonGoogle.click();
-    }
-  } catch (e) {
-    // Button not found in the DOM; ignore and continue
-  }
+  //Verifies the page has the correct heading
+  await expect(page.getByText('Swag Labs')).toBeVisible();
 
-  //Search with keywords
-  await page.getByRole("combobox", { name: "Search" }).fill("playwright by testers talk");
-  await page.getByRole("combobox", { name: "Search" }).press("Enter");
+  //CLick into the Username field and provide an incorrect username
+  await page.locator('#user-name').fill('incorrect.username')
 
-  //Click on playlist
-  await page.getByRole("link", { name: "Playwright by Testers Talk☑️" }).first().click();
-
-  //If Accept All Youtube button appears
-   const acceptAllButtonYoutube = page.getByRole('button', { name: 'Accept all' });
-
-  try {
-    if (await acceptAllButtonYoutube.isVisible()) {
-      await acceptAllButtonYoutube.click();
-    }
-  } catch (e) {
-    // Button not found in the DOM; ignore and continue
-  }
-
-  //Validate Web Page title
-  await expect(page).toHaveTitle('Playwright by Testers Talk☑️ - YouTube');
-
+  
 });
