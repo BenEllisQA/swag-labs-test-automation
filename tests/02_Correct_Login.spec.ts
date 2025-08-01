@@ -23,5 +23,4 @@ test("Login with incorrect details", async ({ page }) => {
 
   //Verify successful login
   await expect(page.getByText('Sauce Labs Backpack')).toBeVisible();
-  
 });
