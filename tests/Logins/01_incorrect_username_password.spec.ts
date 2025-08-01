@@ -5,7 +5,7 @@ import { test, expect } from "@playwright/test";
 test("Login with incorrect details", async ({ page }) => {
   // Go to URL
   await page.goto("https://www.saucedemo.com/");
-01_Incorrect_Login
+  
   //Verify the Page has the correct title
   await expect(page).toHaveTitle('Swag Labs');
 
