@@ -2,7 +2,7 @@
 import { test, expect } from "@playwright/test";
 
 //Write a test
-test("Login with incorrect details", async ({ page }) => {
+test("Login with correct details", async ({ page }) => {
   // Go to URL
   await page.goto("https://www.saucedemo.com/");
 
