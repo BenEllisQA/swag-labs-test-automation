@@ -18,25 +18,35 @@
 <p>You'll need to have an IDE installed to begin with (I recommend VS Code). Once you've got one of those up and running you follow the below.</p>
 
 <h3>Clone Git:</h3>
+
 ```
 git clone https://github.com/BenEllisQA/swag-labs-test-automation
 ```
+
+
 <h3>Install Homebrew:</h3>
+
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+
 <h3>Install Node.js:</h3>
+
 ```
 brew install node@22
 ```
 
+
 <h3>Install npm:</h3>
+
 ```
 npm install -g npm
 ```
 
+
 <h3>Install PLaywright:</h3>
+
 ```
 npm init playwright@latest
 ```
