@@ -15,7 +15,7 @@
 <p>The purpose of this repository is to display my testing work for the Swag Labs ecommerce store. It is showcasing automated end-to-end test scenarios using Playwright with TypeScript,  Node.js and CI/CD with Github Actions. It serves as a demonstration of test planning, script development, and execution.</p>
 
 <h2>Execution:</h2>
-<p>You'll need to have an IDE installed to begin with (I recommend VS Code). Once you've got one of those up and running you follow the below.</p>
+<p>You'll need to have an IDE installed to begin with (I recommend VS Code). Once you've got one of those up and running you can follow the below which will install the required dependencies and allow you to run the automated tests.</p>
 
 <h3>Clone Git:</h3>
 
@@ -45,7 +45,7 @@ npm install -g npm
 ```
 
 
-<h3>Install PLaywright:</h3>
+<h3>Install Playwright:</h3>
 
 ```
 npm init playwright@latest
