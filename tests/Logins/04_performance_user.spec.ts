@@ -27,12 +27,12 @@ async function loginAndMeasureTime(page, username: string, password: string, max
 
 test('standard_user should load dashboard in under 1s', async ({ page }) => {
     const maxLoadTimeMs = 1000;
-    const loadTime = await loginAndMeasureTime(page, 'standard_user', 'secret_sauce');
+    const loadTime = await loginAndMeasureTime(page, 'standard_user', 'secret_sauce', 1000)
     expect(loadTime).toBeLessThanOrEqual(maxLoadTimeMs);
 });
 
 test('performance_glitch_user should take longer to load dashboard', async ({ page }) => {
     const maxLoadTimeMs = 1000;
-    const loadTime = await loginAndMeasureTime(page, 'performance_glitch_user', 'secret_sauce');
+    const loadTime = await loginAndMeasureTime(page, 'performance_glitch_user', 'secret_sauce', 1000);
     expect(loadTime).toBeGreaterThan(maxLoadTimeMs);
 });
